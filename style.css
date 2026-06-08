@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'NorseFont';
+    src: url('norse/Norse.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NorseFont';
+    src: url('norse/Norsebold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+}
+
+
+.main-layout {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.image-side {
+    flex: 0 0 25%;
+    background: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.branding {
+    margin-top: 25vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 6rem;
+    color: white;
+    font-family: 'NorseFont', Georgia, serif;
+    font-weight: bold;
+    height: 175px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.brand-logo {
+    height: 120px;
+    width: auto;
+}
+
+
+.attribution {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.7rem;
+    color: rgb(180, 180, 180);
+}
+
+.attribution a {
+    color: rgb(180, 180, 180);
+    text-decoration: underline;
+}
+
+
+.text-side {
+    flex: 0 0 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    background-color: #fcfcfc;
+}
+
+/* Text Section Content Layout */
+.intro-section {
+    padding: 160px 60px 40px 60px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: #000000;
+}
+
+.intro-section p {
+    margin: 0;
+    max-width: 800px;
+}
+
+
+.form-container {
+    background-color: #f8fafc;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+    padding: 30px 60px 40px 60px;
+    border-top: 1px solid #eef2f6;
+    border-bottom: 1px solid #eef2f6;
+}
+
+.form-container .cta {
+    margin: 0 0 25px 0;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #1e293b;
+}
+
+
+.form-container form {
+    display: grid;
+    grid-template-columns: repeat(2, 320px);
+    column-gap: 80px;
+    row-gap: 25px;
+}
+
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.field-group label {
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #475569;
+}
+
+.field-group input {
+    border: 1px solid #E5E7EB;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+
+.field-group input:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.25);
+}
+
+
+.field-group input[type="password"]:user-invalid,
+.field-group input.error-trigger {
+    border-color: #b91c1c;
+}
+
+.action-section {
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.submit-btn {
+    background-color: #596D48;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #4a5c3b;
+}
+
+.login-prompt {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.login-prompt a {
+    color: #596D48;
+    text-decoration: none;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
+}
