@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="shell">
+        <h1>Tic-tac-toe</h1>
+        <p class="subtitle">3x3 Classic</p>
+
+        <div class="setup" id="setup">
+            <div class="player-row">
+                <span class="player-dot dot-x"></span>
+                <input id="p1" type="text" placeholder="Player 1 name (plays X)" />
+            </div>
+            <div class="player-row">
+                <span class="player-dot dot-o"></span>
+                <input id="p2" type="text" placeholder="Player 2 name (plays O)" />
+            </div>
+            <button class="start-btn" id="startBtn">Start game</button>
+        </div>
+
+        <div id="game" style="display:none">
+            <div class="scores">
+                <div class="score-card x">
+                    <div class="score-name" id="s1name">Player 1</div>
+                    <div class="score-val" id="s1val">0</div>
+                    <div class="score-marker">plays X</div>
+                </div>
+                <div class="score-card o">
+                    <div class="score-name" id="s2name">Player 2</div>
+                    <div class="score-val" id="s2val">0</div>
+                    <div class="score-marker">plays O</div>
+                </div>
+            </div>
+            <div class="status-bar" id="status"></div>
+            <div class="board" id="board"></div>
+            <button class="start-btn" id="resetBtn">New round</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
