@@ -1,0 +1,174 @@
+/* ── Editor section (left panel) ── */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6c7086;
+  font-family: 'Courier New', monospace;
+}
+
+.section form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.section input {
+  background: #313244;
+  border: 1px solid #45475a;
+  border-radius: 4px;
+  color: #cdd6f4;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+
+.section input:focus {
+  border-color: #89b4fa;
+}
+
+.section input::placeholder {
+  color: #585b70;
+}
+
+.date-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6c7086;
+  font-family: 'Courier New', monospace;
+  margin-top: 0.25rem;
+}
+
+.btn-submit {
+  background: #89b4fa;
+  color: #1e1e2e;
+  border: none;
+  border-radius: 4px;
+  padding: 0.45rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  transition: background 0.15s;
+  align-self: flex-start;
+}
+
+.btn-submit:hover {
+  background: #b4befe;
+}
+
+.btn-edit {
+  background: transparent;
+  border: 1px solid #45475a;
+  color: #89b4fa;
+  border-radius: 4px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  align-self: flex-start;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+  transition: border-color 0.15s;
+}
+
+.btn-edit:hover {
+  border-color: #89b4fa;
+}
+
+/* ── CV preview cards (right panel) ── */
+.cv-section {
+  margin-bottom: 2.25rem;
+}
+
+/* General info sits at the top with no section title */
+.cv-section--general {
+  margin-bottom: 2.75rem;
+}
+
+.cv-name {
+  font-size: 2.6rem;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+  line-height: 1.1;
+}
+
+.cv-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #666;
+  font-family: 'Courier New', monospace;
+  margin-top: 0.4rem;
+}
+
+.cv-dot {
+  color: #bbb;
+}
+
+.cv-divider {
+  border: none;
+  border-top: 1.5px solid #e0dbd3;
+  margin-top: 1.5rem;
+}
+
+.cv-section-title {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #89b4fa;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #e8e4df;
+}
+
+.cv-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cv-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.cv-entry-title {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.cv-entry-date {
+  font-size: 0.75rem;
+  color: #999;
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+}
+
+.cv-entry-subtitle {
+  font-size: 0.925rem;
+  color: #555;
+  font-style: italic;
+}
+
+.cv-entry-body {
+  font-size: 0.875rem;
+  color: #555;
+  margin-top: 0.35rem;
+  line-height: 1.65;
+}

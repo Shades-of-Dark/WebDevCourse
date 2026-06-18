@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: #f0ede8;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+}
+
+/* ── Left: editor panel ── */
+.editor-panel {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.editor-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #89b4fa;
+  font-family: 'Courier New', monospace;
+  border-bottom: 1px solid #313244;
+  padding-bottom: 1rem;
+}
+
+/* ── Right: CV preview panel ── */
+.cv-panel {
+  padding: 4rem 5rem;
+  background: #faf9f7;
+  min-height: 100vh;
+}
+
+.cv-empty {
+  color: #464646;
+  font-size: 0.85rem;
+  font-family: 'Courier New', monospace;
+  margin-top: 2rem;
+}
