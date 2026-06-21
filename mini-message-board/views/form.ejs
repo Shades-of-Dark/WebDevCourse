@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+
+    <title>
+        <%=title%>
+    </title>
+</head>
+
+<body>
+    <main>
+        <form method="POST" action="/new">
+            <header>
+                Send a Message
+            </header>
+            <label for="user-name">Username</label>
+            <input name="username" id="user-name" placeholder="Type your name here..." text="" type="text">
+            <label for="user-msg">Message</label>
+            <input name="msg" placeholder="Type your message here..." id="user-msg" text="" type="text">
+            <button>Submit</button>
+        </form>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+/* === Mini Messageboard — base styles === */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --bg: #E7ECEE;
+    --surface: #FFFFFF;
+    --surface-alt: #F4F7F8;
+    --ink: #1F2933;
+    --ink-muted: #5B6B73;
+    --accent: #2B6E68;
+    --accent-hover: #3A8780;
+    --accent-press: #1F5450;
+    --border: #D7DEE1;
+    --radius: 10px;
+    --shadow: 0 1px 2px rgba(31, 41, 51, 0.06), 0 4px 12px rgba(31, 41, 51, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    background-image: radial-gradient(circle at 1px 1px, rgba(31, 41, 51, 0.06) 1px, transparent 0);
+    background-size: 22px 22px;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--ink);
+    padding: 48px 20px;
+}
+
+main {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+h1,
+h2 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* "New Message" link, styled as a pill button */
+main>a {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding: 10px 18px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+main>a:hover {
+    background: var(--accent-hover);
+}
+
+main>a:active {
+    background: var(--accent-press);
+    transform: translateY(1px);
+}
+
+/* Message list */
+main>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+main>ul>li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 600;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+main>ul>li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(31, 41, 51, 0.08), 0 8px 20px rgba(31, 41, 51, 0.1);
+}
+
+/* Nested lists (message text, timestamp) read as plain content, not bullets */
+main>ul>li ul {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+}
+
+main>ul>li ul li {
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+main>ul>li ul li:first-child {
+    color: var(--ink);
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+/* "Open" button */
+button {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--accent);
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Forms (e.g. the /new page) */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+label {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--ink);
+}
+
+input,
+textarea {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-alt);
+    color: var(--ink);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(43, 110, 104, 0.15);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Submit buttons inside forms get the solid accent treatment */
+form button {
+    align-self: flex-start;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+}
+
+form button:hover {
+    background: var(--accent-hover);
+    color: #fff;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 24px 14px;
+    }
+}
