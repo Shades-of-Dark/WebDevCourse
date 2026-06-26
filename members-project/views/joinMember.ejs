@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Member — The Clubhouse</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav>
+    <a class="nav-brand" href="/">The Clubhouse</a>
+    <div class="nav-links">
+        <a href="/membership">Membership</a>
+        <a href="/">Back to Feed</a>
+    </div>
+</nav>
+
+<div class="page-centered">
+    <div class="form-card">
+        <h1 class="form-title">Become a Member</h1>
+        <p class="page-subtitle">Enter the secret code to unlock member status.</p>
+
+        <% if (error) { %>
+        <div class="error-box"><%= error %></div>
+        <% } %>
+
+        <form method="POST" action="/membership/join">
+            <div class="form-group">
+                <label for="secretCode">Secret Code</label>
+                <input type="password" name="secretCode" id="secretCode" placeholder="••••••••" required>
+            </div>
+            <button class="btn btn-primary btn-full" type="submit">Unlock Member Status</button>
+        </form>
+
+        <div class="form-footer">
+            <a href="/membership">Back to Membership Hub</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

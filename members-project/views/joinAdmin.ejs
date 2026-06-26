@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become an Admin — The Clubhouse</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav>
+    <a class="nav-brand" href="/">The Clubhouse</a>
+    <div class="nav-links">
+        <a href="/membership">Membership</a>
+        <a href="/">Back to Feed</a>
+    </div>
+</nav>
+
+<div class="page-centered">
+    <div class="form-card">
+        <h1 class="form-title">Become an Admin</h1>
+        <p class="page-subtitle">Enter the admin code to gain moderation powers.</p>
+
+        <% if (error) { %>
+        <div class="error-box"><%= error %></div>
+        <% } %>
+
+        <form method="POST" action="/membership/admin">
+            <div class="form-group">
+                <label for="secretCode">Admin Code</label>
+                <input type="password" name="secretCode" id="secretCode" placeholder="••••••••" required>
+            </div>
+            <button class="btn btn-primary btn-full" type="submit">Unlock Admin Status</button>
+        </form>
+
+        <div class="form-footer">
+            <a href="/membership">Back to Membership Hub</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

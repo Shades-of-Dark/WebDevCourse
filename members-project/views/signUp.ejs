@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up — The Clubhouse</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav>
+    <a class="nav-brand" href="/">The Clubhouse</a>
+    <div class="nav-links">
+        <a href="/">Log In</a>
+    </div>
+</nav>
+
+<div class="page-centered">
+    <div class="form-card">
+        <h1 class="form-title">Create an account</h1>
+        <p class="page-subtitle">Join the club.</p>
+
+        <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+        <div class="error-box">
+            <ul>
+                <% errors.forEach(function(error) { %>
+                <li><%= error.msg %></li>
+                <% }); %>
+            </ul>
+        </div>
+        <% } %>
+
+        <form method="POST" action="/sign-up">
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" name="firstName" id="first_name" placeholder="Jane"
+                    value="<%= typeof data !== 'undefined' ? data.firstName || '' : '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" name="lastName" id="last_name" placeholder="Doe"
+                    value="<%= typeof data !== 'undefined' ? data.lastName || '' : '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Email</label>
+                <input type="email" name="username" id="username" placeholder="you@example.com"
+                    value="<%= typeof data !== 'undefined' ? data.username || '' : '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" placeholder="••••••••" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_pw">Confirm Password</label>
+                <input id="confirm_pw" type="password" name="confirm_pw" placeholder="••••••••" required>
+            </div>
+            <button class="btn btn-primary btn-full" type="submit">Sign Up</button>
+        </form>
+
+        <div class="form-footer">
+            Already have an account? <a href="/">Log In</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

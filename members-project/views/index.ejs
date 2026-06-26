@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><% if (!locals.user) { %>Log In<% } else { %>The Clubhouse<% } %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav>
+    <a class="nav-brand" href="/">The Clubhouse</a>
+    <% if (locals.user) { %>
+    <div class="nav-links">
+        <% if (!user.is_member) { %>
+            <a href="/membership/join">Become a Member</a>
+        <% } %>
+        <% if (!user.is_admin) { %>
+            <a href="/membership/admin">Become an Admin</a>
+        <% } %>
+        <a href="/new-message">+ New Message</a>
+        <a href="/log-out">Log Out</a>
+    </div>
+    <% } %>
+</nav>
+
+<div class="page">
+<% if (locals.user) { %>
+
+    <h1>Welcome back<% if (user.first_name) { %>, <%= user.first_name %><% } %>.</h1>
+    <p class="page-subtitle">
+        <%= user.username %>
+        <% if (user.is_admin) { %> <span class="badge badge-admin">Admin</span><% } else if (user.is_member) { %> <span class="badge">Member</span><% } %>
+    </p>
+
+    <% if (messages.length === 0) { %>
+        <div class="empty-state">
+            <p>No messages yet. Be the first to post.</p>
+            <a class="btn btn-primary" href="/new-message">Create a Message</a>
+        </div>
+    <% } else { %>
+        <% for (const msg of messages) { %>
+        <div class="card">
+            <div class="card-title"><%= msg.title %></div>
+            <div class="card-body"><%= msg.text %></div>
+            <% if (user.is_member) { %>
+            <div class="card-meta">
+                <span>By <%= msg.username %></span>
+                <span><%= new Date(msg.timestamp).toLocaleString() %></span>
+                <% if (user.is_admin) { %>
+                <form method="POST" action="/new-message/<%= msg.id %>/delete" style="margin-left:auto">
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+                <% } %>
+            </div>
+            <% } %>
+        </div>
+        <% } %>
+    <% } %>
+
+<% } else { %>
+
+    <div class="page-centered" style="max-width:400px; margin-top:2rem">
+        <div class="form-card">
+            <h1 class="form-title">Log In</h1>
+            <p class="page-subtitle">Members only beyond this point.</p>
+            <form action="/log-in" method="POST">
+                <div class="form-group">
+                    <label for="username">Email</label>
+                    <input id="username" name="username" type="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" placeholder="••••••••" required>
+                </div>
+                <button class="btn btn-primary btn-full" type="submit">Log In</button>
+            </form>
+            <div class="form-footer">
+                Don't have an account? <a href="/sign-up">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+<% } %>
+</div>
+
+</body>
+</html>
